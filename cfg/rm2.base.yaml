@@ -2,8 +2,8 @@ cleartoprightcorner: true
 
 layout:
   paper:
-    width: 15.6cm
-    height: 20.9cm
+    width: 15.72cm
+    height: 20.96cm
 
     reversemargins: true
     marginparwidth: 1cm

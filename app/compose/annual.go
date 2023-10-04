@@ -1,8 +1,6 @@
 package compose
 
 import (
-	"strconv"
-
 	"github.com/kudrykv/latex-yearly-planner/app/components/cal"
 	"github.com/kudrykv/latex-yearly-planner/app/components/header"
 	"github.com/kudrykv/latex-yearly-planner/app/components/page"
@@ -35,18 +33,20 @@ func extra2(ctrc, sel1, sel2 bool, week *cal.Week, idxPage int) header.Items {
 		items = append(items, header.NewCellItem(week.Name()))
 	}
 
-	items = append(items, header.NewCellItem("Calendar").Selected(sel1))
-
-	if idxPage > 0 {
-		suffix := ""
-		if idxPage > 1 {
-			suffix = " " + strconv.Itoa(idxPage)
-		}
-
-		items = append(items, header.NewCellItem("Notes").Refer("Notes Index"+suffix).Selected(sel2))
-	} else {
-		items = append(items, header.NewCellItem("Notes").Refer("Notes Index").Selected(sel2))
+	if !sel1 {
+		items = append(items, header.NewCellItem("Calendar").Selected(sel1))
 	}
+
+	// if idxPage > 0 {
+	// 	suffix := ""
+	// 	if idxPage > 1 {
+	// 		suffix = " " + strconv.Itoa(idxPage)
+	// 	}
+
+	// 	items = append(items, header.NewCellItem("Notes").Refer("Notes Index"+suffix).Selected(sel2))
+	// } else {
+	// 	items = append(items, header.NewCellItem("Notes").Refer("Notes Index").Selected(sel2))
+	// }
 
 	return items.WithTopRightCorner(ctrc)
 }

@@ -24,6 +24,8 @@
 \usepackage{adjustbox}
 \usepackage{multido}
 
+\usetikzlibrary{calc}
+
 \hypersetup{
     {{- if not .Cfg.Debug.ShowLinks}}hidelinks=true{{end -}}
 }
